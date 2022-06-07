@@ -1,7 +1,7 @@
-﻿using Limbo.DataAccess.Services;
-using Limbo.DataAccess.Services.Crud;
-using Limbo.DataAccess.Settings;
-using Limbo.DataAccess.UnitOfWorks;
+﻿using Limbo.EntityFramework.Services;
+using Limbo.EntityFramework.Services.Crud;
+using Limbo.EntityFramework.Settings;
+using Limbo.EntityFramework.UnitOfWorks;
 using Limbo.MailSystem.Persisence.MailTemplates.Models;
 using Limbo.MailSystem.Persisence.MailTemplates.Repositories;
 using Microsoft.Extensions.Logging;
