@@ -1,7 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <LangVersion>9.0</LangVersion>
     <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0-preview.0</Version>
+    <Company>Limbo</Company>
+    <Authors>nikcio</Authors>
+    <Copyright>Copyright © 2022</Copyright>
+    <Description>A package for doing mails.</Description>
+  </PropertyGroup>
+
+  <!-- Information for the NuGet package -->
+  <PropertyGroup>
+    <PackageId>Limbo.MailSystem</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/limbo-works/Limbo.MailSystem</PackageProjectUrl>
+    <PackageIcon>Limbo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/limbo-works/Limbo.MailSystem</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,17 +45,7 @@
     <None Remove="Templates\SimpleText\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\Limbo.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
+  <!-- Include NuGet dependencies -->
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
@@ -40,18 +53,15 @@
     <PackageReference Include="Razor.Templating.Core" Version="1.6.0" />
   </ItemGroup>
 
-    <!-- Generate XML documentation -->
-    <PropertyGroup>
-        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-        <Nullable>enable</Nullable>
-        <Version>1.0.0-preview.0</Version>
-        <Authors>nikcio</Authors>
-        <Company>Limbo</Company>
-        <Description>A package for doing mails</Description>
-        <PackageProjectUrl>https://github.com/limbo-works/Limbo.Umbraco.Subscriptions</PackageProjectUrl>
-        <PackageIcon>Limbo.png</PackageIcon>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/limbo-works/Limbo.Umbraco.Subscriptions</RepositoryUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    </PropertyGroup>
+  <!-- Include package icon for NuGet -->
+  <ItemGroup>
+    <None Include="..\..\Limbo.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Generate XML documentation -->
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
